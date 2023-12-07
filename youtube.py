@@ -34,27 +34,8 @@ def convertir_video_a_mp3(video_file):
         print("Error al convertir a MP3:", e)
         return None
 
-# Nombre del video descargado
-nombre_video = 'video_descargado'  # !!!! Reemplaza con el nombre del video descargado YA DEBERIA ESTAR CON ESE NOMBRE !!!!
 
-# Convertir el video a formato MP3
-audio_convertido = convertir_video_a_mp3(nombre_video)
-
-if audio_convertido:
-    print("¡Conversión a MP3 completada con éxito!")
-else:
-    print("Hubo un error al convertir a MP3.")
-
-
-
-
-
-
-# Si quieres descargar el video en formato mp4 sustituye desde la linea 26 hasta el final
-
-'''
-
-    def convertir_video(video_file, output_format='mp4'):
+def convertir_video(video_file, output_format='mp4'):
     try:
         clip = VideoFileClip(video_file)
         output_file = 'video_convertido.' + output_format
@@ -64,16 +45,34 @@ else:
         print("Error al convertir el video:", e)
         return None
 
+
 # Nombre del video descargado
-nombre_video = 'video_descargado.mp4'  # Reemplaza con el nombre del video descargado
+nombre_video = 'video_descargado'  # !!!! Reemplaza con el nombre del video descargado YA DEBERIA ESTAR CON ESE NOMBRE !!!!
 
-# Convertir el video a otro formato (ejemplo: MP4)
-video_convertido = convertir_video(nombre_video)
+# Simulación de elección del usuario después de la descarga
+eleccion_usuario = input("¿Deseas convertir el video a MP3 o MP4? (Ingresa 'mp3' o 'mp4'): ")
 
-if video_convertido:
-    print("¡Conversión del video completada con éxito!")
+# Proceso basado en la elección del usuario
+if eleccion_usuario.lower() == 'mp3':
+    # Convertir el video a formato MP3
+    audio_convertido = convertir_video_a_mp3(nombre_video)
+
+    if audio_convertido:
+        print("¡Conversión a MP3 completada con éxito!")
+    else:
+        print("Hubo un error al convertir a MP3.")
+elif eleccion_usuario.lower() == 'mp4':
+    # Convertir el video a formato MP4
+    video_convertido = convertir_video(nombre_video)
+
+    if video_convertido:
+        print("¡Conversión a MP4 completada con éxito!")
+    else:
+        print("Hubo un error al convertir a MP4.")
 else:
-    print("Hubo un error al convertir el video.") 
-    
-    
-    '''
+    print("Eleccion no válida. Por favor, ingresa 'mp3' o 'mp4'.")
+
+
+
+
+
