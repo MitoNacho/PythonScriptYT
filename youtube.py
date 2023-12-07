@@ -13,7 +13,7 @@ def descargar_youtube(url):
         return None
 
 # URL del video de YouTube
-url_youtube = 'https://www.youtube.com/watch?v=JFoQBSMpPEw'  # SUSTITUIR POR LA URL DE LA DESCARGA SIN CARACTERES ESPECIALES (DA ERROR)
+url_youtube = input("Por favor, ingresa la URL del video de YouTube: ")  # SUSTITUIR POR LA URL DE LA DESCARGA SIN CARACTERES ESPECIALES (DA ERROR)
 
 # Descargar el video
 video_descargado = descargar_youtube(url_youtube)
